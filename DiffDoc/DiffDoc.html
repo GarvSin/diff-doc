@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>File Compare</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/prepare.js"></script>
+  <script src="js/openfile.js"></script>
+  <script src="js/jsdiff.js"></script>
+  <script src="js/application.js"></script>
+  <style >
+    del{background: #FFE6E6;}
+    ins {background: #E6FFE6;}
+  </style>
+</head>
+<body>
+ <div class="container">
+    <h1>Welcom to file compare</h1>
+    <p>select first file</p> 
+    <div  class="row">
+		<div id="filePanel1" class='file-panel col-lg-6'></div>
+		<div id="filePanel2" class='file-panel col-lg-6'></div>
+	</div>
+	<div  class="row">
+		<input type="button" class="btn btn-default" onclick="showdiff()" value="compare"/>
+		<hr/>
+		<h3>Difference:-</h3>
+		<div id="compareResult" class="panel panel-default"></div>
+	</div>
+</div>
+</body>
+</html>
+
+
+
+
