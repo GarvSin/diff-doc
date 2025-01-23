@@ -1,2 +1,0 @@
-# DiffDoc
-Compare two documers
