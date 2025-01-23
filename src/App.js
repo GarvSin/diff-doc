@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'; // Import the CSS file
+import FileInput from './components/FileInput';
+import ComparisonResult from './components/ComparisonResult';
 
 function App() {
+  const [file1Content, setFile1Content] = useState('');
+  const [file2Content, setFile2Content] = useState('');
+
+  const handleFilesUpload = (content1, content2) => {
+    setFile1Content(content1);
+    setFile2Content(content2);
+  };
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Document Comparison Tool</h1>
+      <FileInput onFilesUpload={handleFilesUpload} />
+      <ComparisonResult file1={file1Content} file2={file2Content} />
     </div>
   );
 }
 
 export default App;
+
