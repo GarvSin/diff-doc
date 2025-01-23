@@ -1,6 +1,8 @@
 import React from 'react';
 import { createTwoFilesPatch } from 'diff';
-import { Diff2Html } from 'diff2html';
+import { parse, html } from 'diff2html';
+import 'diff2html/bundles/css/diff2html.min.css'; // Import the default CSS for diff2html
+
 
 const ComparisonResult = ({ file1, file2 }) => {
   if (!file1 || !file2) return null;
@@ -9,7 +11,7 @@ const ComparisonResult = ({ file1, file2 }) => {
   const diffPatch = createTwoFilesPatch('Document 1', 'Document 2', file1, file2);
 
   // Convert the diff to HTML
-  const diffHtml = Diff2Html.getPrettyHtml(diffPatch, {
+  const diffHtml = diff2Html.getPrettyHtml(diffPatch, {
     inputFormat: 'diff',
     outputFormat: 'side-by-side',
   });
